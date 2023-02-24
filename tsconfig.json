@@ -5,6 +5,7 @@
       "moduleResolution": "node",
       "sourceMap": true,
       "noImplicitAny": true,
+      "allowSyntheticDefaultImports": true,
       "strictNullChecks": true,
       "allowJs": true,
       "jsx": "react",
