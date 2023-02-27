@@ -2,8 +2,8 @@
 这是一个视频会议项目，使用React、MobX和TypeScript开发。
 
 ## 开始
-1. 克隆代码到本地：`git clone [repository-url]`
-2. 进入项目目录：`cd [project-name]`
+1. 克隆代码到本地：`git clone gitlab@gitlab.talk-cloud.com:tk_h5_source/web-meeting-pc.git`
+2. 进入项目目录：`cd web-meeting-pc`
 3. 安装依赖：`npm install`
 4. 启动开发服务器：`npm start`
 
