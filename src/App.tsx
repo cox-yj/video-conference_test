@@ -3,7 +3,9 @@ import { observer } from 'mobx-react-lite'
 import { useTranslation } from 'react-i18next'
 import { roomStore } from './stores/RoomStore'
 import { Room } from './models/Room'
+// import 'antd/dist/antd.css'
 import './styles/index.less'
+import { TKButton } from './components/base'
 
 // import { useUserStore } from "./stores/UserStore";
 import './styles/index.less'
@@ -40,6 +42,9 @@ const App: React.FC = observer(() => {
   }
   return (
     <div className="app-container">
+      <TKButton type="primary" sizetype="large">
+        测试
+      </TKButton>
       <h2>{t('login')}</h2>
       <div>
         {rooms.map((item) => (
