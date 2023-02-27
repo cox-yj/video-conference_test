@@ -1,11 +1,11 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
-// import VideoPlayer from './components/VideoPlayer';
-// import ControlBar from './components/ControlBar';
-// import UserList from './components/UserList';
-// 怎么理解你上面写的代码`import { useRoomStore } from './stores/RoomStore';`
+import { useTranslation } from 'react-i18next';
 import { roomStore } from "./stores/RoomStore";
 import { Room } from "./models/Room";
+import './styles/index.less'
+
+
 // import { useUserStore } from "./stores/UserStore";
 import "./styles/index.less";
 const roomList: Array<Room> = [
@@ -14,9 +14,10 @@ const roomList: Array<Room> = [
     { id: '3', name: "会议室3" },
     { id: '4', name: "会议室14" },
 ]
+
 const App: React.FC = observer(() => {
   const rooms = roomStore.rooms;
-  //   const userStore = useUserStore();
+  const { t } = useTranslation();
 
   React.useEffect(() => {
     // 初始化房间和用户信息
@@ -41,8 +42,9 @@ const App: React.FC = observer(() => {
   }
   return (
     <div className="app-container">
+      <h2>{t('login')}</h2>
       <div>{rooms.map(item=> (<div key={item.id} >{`id: ${item.id }+ name: ${item.name}`}</div>))}</div>
-      <button onClick={fn1}>+</button>
+      <button className="Button" onClick={fn1}>+</button>
       <button onClick={fn2}>-</button>
     </div>
   );

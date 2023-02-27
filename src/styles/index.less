@@ -1,0 +1,59 @@
+@import url('./constants.less');
+// 全局样式
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #0056b3;
+  }
+  
+  // Header 样式
+  .Header {
+    height: 50px;
+    background-color: @primary-color;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .Header-title {
+    font-size: 20px;
+  }
+  
+  .Header-link {
+    color: #fff;
+    font-size: 16px;
+    margin-left: 20px;
+  }
+  
+  // 按钮样式
+  .Button {
+    display: inline-block;
+    background-color: @primary-color;
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .Button:hover {
+    background-color: @primary-color;
+  }
+  
