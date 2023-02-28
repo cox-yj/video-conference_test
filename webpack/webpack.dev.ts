@@ -21,7 +21,7 @@ const devConfig: Configuration = merge(baseConfig, {
   devtool: 'eval-cheap-module-source-map', // 首次打包会慢一点，热更新会更快
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '../src/')
+      '@': path.resolve(__dirname, '../src/renderer/')
     }
   }
 })
@@ -45,7 +45,7 @@ const devServer = new WebpackDevServer(
 
 devServer.start().then(() => {
   // 启动界面
-  openBrowser(`http://${host}:${port}`)
+  // openBrowser(`http://${host}:${port}`)
 })
 
 export default devConfig

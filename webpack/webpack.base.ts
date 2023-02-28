@@ -1,9 +1,10 @@
 import { Configuration } from 'webpack'
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+console.log('patp', path.join(__dirname, '../src/renderer/index.tsx'));
 
 const baseConfig: Configuration = {
-  entry: path.join(__dirname, '../src/index.tsx'), // 入口文件
+  entry: path.join(__dirname, '../src/renderer/index.tsx'), // 入口文件
   // 打包出口文件
   output: {
     filename: 'static/js/[name].js', // 每个输出js的名称

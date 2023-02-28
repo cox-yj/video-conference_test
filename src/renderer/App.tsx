@@ -8,6 +8,8 @@ import Home from './pages/home'
 import BaseComponentExample from './components/base/example'
 import stores from './stores'
 
+
+console.error('1233')
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
