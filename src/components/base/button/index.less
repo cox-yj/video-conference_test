@@ -1,8 +1,85 @@
 @import '../../../styles/constants.less';
 
+@btn-fill: 48px;
+@btn-large: 40px;
+@btn-middle: 32px;
+@btn-small: 28px;
+@btn-large-padding: 16px;
+@btn-middle-padding: 16px;
+@btn-small-padding: 16px;
+@btn-primary-color: @primary-color;
+@btn-primary-hover-color: @primary-hover-color;
+@btn-primary-disabled-color: @primary-disabled-color;
+@btn-primary-text-disabled-color: #fff;
+@btn-border-color: @border-color;
+
 .tk-components-btn {
-  &-large {
+  box-shadow: none;
+  padding: 0;
+  .chinese-font();
+  &-customize-primary {
+    background-color: @btn-primary-color;
+    border-color: @btn-primary-color;
+    text-shadow: none;
+    color: #fff;
+    text-shadow: none;
+    box-shadow: none;
+    &:hover,
+    &:focus {
+      background-color: @btn-primary-hover-color;
+      border-color: @btn-primary-hover-color;
+    }
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:focus,
+    &[disabled]:active {
+      background-color: @btn-primary-disabled-color;
+      border-color: @btn-primary-disabled-color;
+      color: @btn-primary-text-disabled-color;
+    }
+  }
+  &-customize-default {
+    border: 1px solid @btn-border-color;
+    color: #000;
+    &:hover,
+    &:focus {
+      border: 1px solid @btn-primary-color;
+      color: @btn-primary-color;
+    }
+  }
+  &-customize-link {
+    color: rgba(0, 0, 0, 0.65);
+    &:hover {
+    }
+  }
+  &-fill {
     width: 100%;
-    height: 48px;
+    height: @btn-large;
+    line-height: @btn-large;
+    border-radius: 16px;
+  }
+  &-large {
+    padding: 0 @btn-large-padding;
+    height: @btn-large;
+    line-height: @btn-large;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  &-middle {
+    padding: 0 @btn-middle-padding;
+    height: @btn-middle;
+    line-height: @btn-middle;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  &-small {
+    padding: 0 @btn-small-padding;
+    height: @btn-small;
+    line-height: @btn-small;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 13px;
   }
 }

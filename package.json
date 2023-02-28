@@ -4,7 +4,7 @@
   "description": "A video conferencing app built with React, MobX and TypeScript",
   "scripts": {
     "start": "cross-env NODE_ENV=development BASE_ENV=development webpack serve -c webpack/webpack.dev.ts",
-    "build": "react-scripts build",
+    "build": "cross-env NODE_ENV=production BASE_ENV=production webpack -c webpack/webpack.prod.ts",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint-staged": "lint-staged --allow-empty",

@@ -9,7 +9,7 @@ const baseConfig: Configuration = {
     filename: 'static/js/[name].js', // 每个输出js的名称
     path: path.join(__dirname, '../dist'), // 打包结果输出路径
     clean: true, // webpack4需要配置clean-webpack-plugin来删除dist文件,webpack5内置了
-    publicPath: '/' // 打包后文件的公共前缀路径
+    publicPath: './' // 打包后文件的公共前缀路径
   },
   // loader 配置
   module: {
@@ -31,7 +31,7 @@ const baseConfig: Configuration = {
   // plugins 的配置
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'webpack5-react-ts',
+      title: 'video-conference',
       filename: 'index.html',
       // 复制 'index.html' 文件，并自动引入打包输出的所有资源（js/css）
       template: path.join(__dirname, '../public/index.html'),

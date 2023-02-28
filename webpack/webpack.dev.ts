@@ -18,7 +18,12 @@ const port = '8082'
 // 合并公共配置,并添加开发环境配置
 const devConfig: Configuration = merge(baseConfig, {
   mode: 'development', // 开发模式,打包更加快速,省了代码优化步骤
-  devtool: 'eval-cheap-module-source-map' // 首次打包会慢一点，热更新会更快
+  devtool: 'eval-cheap-module-source-map', // 首次打包会慢一点，热更新会更快
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '../src/')
+    }
+  }
 })
 
 const devServer = new WebpackDevServer(

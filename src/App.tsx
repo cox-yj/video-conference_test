@@ -5,6 +5,7 @@ import { Provider } from 'mobx-react'
 
 import Login from './pages/login'
 import Home from './pages/home'
+import BaseComponentExample from './components/base/example'
 import stores from './stores'
 
 ReactDOM.render(
@@ -15,6 +16,7 @@ ReactDOM.render(
           <Route path="/" element={<Login />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/home" element={<Home />}></Route>
+          <Route path="/components" element={<BaseComponentExample />}></Route>
         </Routes>
       </Provider>
     </BrowserRouter>

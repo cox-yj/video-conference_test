@@ -1,0 +1,23 @@
+@import '../../../styles/constants.less';
+
+@input-border-color: @border-color;
+@input-default-color: @primary-color;
+
+.tk-components-input {
+  height: 30px;
+  line-height: 30px;
+  color: #000;
+  border-color: @input-border-color;
+  padding: 0 12px;
+  border-radius: 8px;
+  &:focus,
+  &:active {
+    border-color: @input-default-color;
+    outline: none;
+    box-shadow: none;
+  }
+  &::placeholder {
+    .chinese-font();
+    font-size: 13px;
+  }
+}
