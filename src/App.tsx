@@ -1,62 +1,23 @@
 import React from 'react'
-import { observer } from 'mobx-react-lite'
-import { useTranslation } from 'react-i18next'
-import { roomStore } from './stores/RoomStore'
-import { Room } from './models/Room'
-// import 'antd/dist/antd.css'
-import './styles/index.less'
-import { TKButton } from './components/base'
+import ReactDOM from 'react-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Provider } from 'mobx-react'
 
-// import { useUserStore } from "./stores/UserStore";
-import './styles/index.less'
-const roomList: Array<Room> = [
-  { id: '1', name: '会议室1' },
-  { id: '2', name: '会议室2' },
-  { id: '3', name: '会议室3' },
-  { id: '4', name: '会议室14' }
-]
+import Login from './pages/login'
+import Home from './pages/home'
+import stores from './stores'
 
-const App: React.FC = observer(() => {
-  const rooms = roomStore.rooms
-  const { t } = useTranslation()
-
-  React.useEffect(() => {
-    // 初始化房间和用户信息
-    // roomStore.initRoom();
-    // userStore.initUser();
-  }, [])
-  const [value, setValue] = React.useState(1)
-  const fn1 = () => {
-    if (roomList.length) {
-      const item = roomList.pop()
-      roomStore.addRoom(item as Room)
-    }
-  }
-  const fn2 = () => {
-    setValue(value - 1)
-    if (rooms[0]) roomStore.removeRoomById(rooms[0].id)
-  }
-
-  const remRoom = (e: React.MouseEvent<HTMLElement>, id: Room['id']) => {
-    roomStore.removeRoomById('123')
-  }
-  return (
-    <div className="app-container">
-      <TKButton type="primary" sizetype="large">
-        测试
-      </TKButton>
-      <h2>{t('login')}</h2>
-      <div>
-        {rooms.map((item) => (
-          <div key={item.id}>{`id: ${item.id}+ name: ${item.name}`}</div>
-        ))}
-      </div>
-      <button className="Button" onClick={fn1}>
-        +
-      </button>
-      <button onClick={fn2}>-</button>
-    </div>
-  )
-})
-
-export default App
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider {...stores}>
+        <Routes>
+          <Route path="/" element={<Login />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/home" element={<Home />}></Route>
+        </Routes>
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+)

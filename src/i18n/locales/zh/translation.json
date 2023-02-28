@@ -1,12 +1,12 @@
 {
-    "welcome": "Welcome to Video Conference",
-    "login": "Login",
-    "logout": "Logout",
-    "room": "Room",
-    "userList": "User List",
-    "mute": "Mute",
-    "unmute": "Unmute",
-    "videoOn": "Turn on video",
-    "videoOff": "Turn off video"
-  }
-  
+  "welcome": "Welcome to Video Conference",
+  "login": "Login",
+  "home": "Home",
+  "logout": "Logout",
+  "room": "Room",
+  "userList": "User List",
+  "mute": "Mute",
+  "unmute": "Unmute",
+  "videoOn": "Turn on video",
+  "videoOff": "Turn off video"
+}
