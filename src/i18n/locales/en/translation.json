@@ -1,6 +1,7 @@
 {
     "welcome": "Welcome to Video Conference",
     "login": "Login",
+    "home": "Home",
     "logout": "Logout",
     "room": "Room",
     "userList": "User List",
