@@ -3,7 +3,7 @@
 @input-border-color: @border-color;
 @input-default-color: @primary-color;
 
-.tk-components-input {
+.tk-components-input() {
   height: 30px;
   line-height: 30px;
   color: #000;
@@ -11,13 +11,22 @@
   padding: 0 12px;
   border-radius: 8px;
   &:focus,
-  &:active {
-    border-color: @input-default-color;
+  &:active,
+  &:hover {
+    border-color: @input-default-color!important;
     outline: none;
     box-shadow: none;
   }
   &::placeholder {
     .chinese-font();
     font-size: 13px;
+  }
+}
+
+.tk-components-input {
+  .tk-components-input();
+  .ant-input {
+    .tk-components-input();
+    height: 100%;
   }
 }

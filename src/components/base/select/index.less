@@ -1,0 +1,75 @@
+@import '../../../styles/constants.less';
+
+@select-border-color: @border-color;
+@select-default-color: @primary-color;
+
+@select-large-radius: 10px;
+@select-small-radius: 8px;
+
+.tk-components-select() {
+  height: 30px;
+}
+
+.tk-components-select {
+  &-customize-button {
+    // border: 1px solid @select-border-color;
+    &:hover {
+      border-color: transparent;
+    }
+  }
+  &-fill {
+    width: 100%;
+  }
+
+  &-large {
+    border-radius: @select-large-radius;
+    height: 40px;
+    &:not(.ant-select-customize-input) .ant-select-selector {
+      border-radius: @select-large-radius;
+      height: 38px;
+      line-height: 38px;
+    }
+    .ant-select-selector .ant-select-selection-item,
+    .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+      line-height: 38px;
+    }
+  }
+  &-small {
+    border-radius: @select-small-radius;
+    height: 28px;
+    &:not(.ant-select-customize-input) .ant-select-selector {
+      border-radius: @select-small-radius;
+      height: 26px;
+    }
+    .ant-select-selector .ant-select-selection-item,
+    .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+      line-height: 26px;
+    }
+  }
+
+  &:not(.ant-select-disabled):hover .ant-select-selector {
+    border-color: @select-default-color;
+  }
+
+  &:not(.ant-select-customize-input) .ant-select-selector {
+    border-color: @select-border-color;
+  }
+  .ant-select-arrow {
+    transition: 0.3s;
+  }
+  &.ant-select-focused {
+    border-color: transparent;
+    // 点击后的颜色
+    &:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      border-color: @select-default-color;
+      box-shadow: none;
+    }
+  }
+  &.ant-select-open {
+    .anticon-down {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+// ant-select-focused ant-select-single ant-select-show-arrow ant-select-open

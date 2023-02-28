@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Provider } from 'mobx-react'
-
+import 'antd/dist/antd.css'
 import Login from './pages/login'
 import Home from './pages/home'
 import BaseComponentExample from './components/base/example'
